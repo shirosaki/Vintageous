@@ -871,6 +871,8 @@ class _vi_repeat(IrreversibleTextCommand):
             # TODO: Implement counts properly for 'sequence' command.
             for i in range(state.count):
                 self.view.run_command(cmd, args)
+        elif cmd == 'insert':
+            self.view.run_command(cmd, args)
 
         # Ensure we wipe count data if any.
         state.reset()
